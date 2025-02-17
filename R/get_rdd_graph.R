@@ -64,7 +64,7 @@ get_rdd_graph <- function(data, rdd_label, polynomial_order = 1,
   #last day of untreated period
   untx_est <- tail(untx_lm[["fitted.values"]], n=1)
   #calculate summary stats
-  regression_discontinuity_percent = tx_est - untx_est
+  regression_discontinuity = tx_est - untx_est
   regression_discontinuity_scale = tx_est/untx_est
 
     
@@ -82,12 +82,11 @@ get_rdd_graph <- function(data, rdd_label, polynomial_order = 1,
       subtitle = paste0(start_datetime," to ", end_datetime),
       caption = "Data from Google Trends",
       x = "Date",
-      y = "Search Volume (%)",
+      y = "Search Volume",
       colour = "Group") +
     annotate("text", x = treatment_cutoff_ID-1, y = label_y_pos,
              label = paste0(rdd_label,"\nestimated discontinuity = ",
-                            format(round(regression_discontinuity_percent, 2), nsmall = 2),
-                            "%"),
+                            format(round(regression_discontinuity, 2), nsmall = 2)),
              hjust = 1)
   
   return(rdd_plot)

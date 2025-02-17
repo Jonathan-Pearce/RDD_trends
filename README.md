@@ -1,16 +1,30 @@
 # RDD_trends
 Enabling regression discontinuity experiments with [Google Trends](https://trends.google.com/trends/) data
 
-![image](https://github.com/user-attachments/assets/3a4d4162-0e0f-4c00-be77-d6f921e41e7d)
+![image](https://github.com/user-attachments/assets/17c72c2e-91c2-47b3-8769-0e567a3824b6)
+
 
 ## Example -  'GST tax' search in Canada
 Between November 2024 and February 2025 the federal government of Canada proposed, passed and executed legislation ([Bill C-78, the Tax Break for All Canadians Act](https://www.canada.ca/en/services/taxes/child-and-family-benefits/gst-hst-holiday-tax-break.html)) making essentially all food and many holiday essentials tax-free (GST/HST) for two months from December 14, 2024 to February 15, 2025. In this example, we focus around the date this [legislation was originally proposed](https://www.canada.ca/en/department-finance/news/2024/11/more-money-in-your-pocket-a-tax-break-for-all-canadians.html) (November 21, 2024) to examine how this news impacted the search volume related to tax terms in Canada, specifically the search term 'GST tax'.
 
-Data for replication:
-
 Code for replication:
+```R
+devtools::install_github("PMassicotte/gtrendsR")
+library(gtrendsR)
+library(ggplot2)
+#read helper functions
+source(file.path(getwd(),"rdd_helpers.R"))
+#get Google Trends data
+gtrends_data <- get_gtrends_data("GST tax", search_geo = "CA", search_time = "2024-10-15 2024-12-08")
+#get regression discontinuity graph
+rdd_graph <- get_rdd_graph(gtrends_data, "Tax break proposed", geo_label = "Canada",
+                           disc_datetime = as.POSIXct("2024-11-21 GMT"))
+plot(rdd_graph)
+#save plot
+ggsave("gst_tax_example.png")
+```
+![image](https://github.com/user-attachments/assets/97c3ef29-b027-414b-bb6d-4400eece03c8)
 
-![image](https://github.com/user-attachments/assets/098c245b-f65c-43db-974c-10c9f0ad9843)
 
 
 ## Implementation Notes
@@ -40,11 +54,12 @@ Code for replication:
 - [RD Packages](https://rdpackages.github.io/)
 
 ## Upcoming Features:
-- RDD, Automatically calculate optimal polynomial order
-- RDD, calculate CIs for discontinuity estimate
-- RDD, add fuzzy RDD
-- RDD, add local polynomial regression (bandwidths, kernels, etc.)
-- RDD, regression kink design ([Tools of the Trade: The Regression Kink Design](https://blogs.worldbank.org/en/impactevaluations/tools-trade-regression-kink-design))
-- Implement difference in differences (will require >1 time series)
-- Basic time series methods (e.g. seasonality)
+- [x] RDD, allow user to specify discontinuity date
+- [ ] RDD, Automatically calculate optimal polynomial order
+- [ ] RDD, calculate CIs for discontinuity estimate
+- [ ] RDD, add fuzzy RDD
+- [ ] RDD, add local polynomial regression (bandwidths, kernels, etc.)
+- [ ] RDD, regression kink design ([Tools of the Trade: The Regression Kink Design](https://blogs.worldbank.org/en/impactevaluations/tools-trade-regression-kink-design))
+- [ ] Implement difference in differences (will require >1 time series)
+- [ ] Basic time series methods (e.g. seasonality)
   - example search term: 'flu shot' 

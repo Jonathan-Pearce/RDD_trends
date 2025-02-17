@@ -40,8 +40,9 @@ Code for replication:
 - [RD Packages](https://rdpackages.github.io/)
 
 ## Upcoming Features:
-- Automatically calculate optimal polynomial order
+- RDD, Automatically calculate optimal polynomial order
 - RDD, calculate CIs for discontinuity estimate
+- RDD, add fuzzy RDD
 - RDD, add local polynomial regression (bandwidths, kernels, etc.)
 - RDD, regression kink design ([Tools of the Trade: The Regression Kink Design](https://blogs.worldbank.org/en/impactevaluations/tools-trade-regression-kink-design))
 - Implement difference in differences (will require >1 time series)

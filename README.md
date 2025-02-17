@@ -1,7 +1,7 @@
 # RDD_trends
 Regression discontinuity experiments with [Google Trends](https://trends.google.com/trends/) data
 
-![image](https://github.com/user-attachments/assets/17c72c2e-91c2-47b3-8769-0e567a3824b6)
+![image](https://github.com/user-attachments/assets/790ccb59-ef30-43d0-97b7-7a14bd4320ac)
 
 
 ## Example -  'GST tax' search in Canada
@@ -27,7 +27,8 @@ plot(rdd_graph)
 ggsave("gst_tax_example.png")
 ```
 Output:
-![image](https://github.com/user-attachments/assets/97c3ef29-b027-414b-bb6d-4400eece03c8)
+![image](https://github.com/user-attachments/assets/6eb5c1e8-a5b2-464c-a907-8af0ec79a7c6)
+
 
 ## Implementation Notes
 - Google trends reports search volume on a relative scale (interest over time) defined as follows; Numbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.
@@ -57,7 +58,8 @@ Output:
 
 ## Upcoming Features:
 - [x] RDD, allow user to specify discontinuity date
-- [ ] RDD, Automatically calculate optimal polynomial order
+- [ ] RDD, add in [percent change](https://www.calculatorsoup.com/calculators/algebra/percent-change-calculator.php) option
+- [ ] RDD, automatically calculate optimal polynomial order
 - [ ] RDD, calculate CIs for discontinuity estimate
 - [ ] RDD, add fuzzy RDD
 - [ ] RDD, add local polynomial regression (bandwidths, kernels, etc.)

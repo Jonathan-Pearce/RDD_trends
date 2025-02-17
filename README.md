@@ -1,5 +1,5 @@
 # RDD_trends
-Enabling regression discontinuity experiments with [Google Trends](https://trends.google.com/trends/) data
+Regression discontinuity experiments with [Google Trends](https://trends.google.com/trends/) data
 
 ![image](https://github.com/user-attachments/assets/17c72c2e-91c2-47b3-8769-0e567a3824b6)
 

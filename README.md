@@ -1,8 +1,7 @@
 # RDD_trends
 Regression discontinuity experiments with [Google Trends](https://trends.google.com/trends/) data
 
-![image](https://github.com/user-attachments/assets/790ccb59-ef30-43d0-97b7-7a14bd4320ac)
-
+![image](https://github.com/user-attachments/assets/263f6af6-ab27-47c4-9d79-f4a3fd3cff5e)
 
 ## Example -  'GST tax' search in Canada
 Between November 2024 and February 2025 the federal government of Canada proposed, passed and executed legislation ([Bill C-78, the Tax Break for All Canadians Act](https://www.canada.ca/en/services/taxes/child-and-family-benefits/gst-hst-holiday-tax-break.html)) making essentially all food and many holiday essentials tax-free (GST/HST) for two months from December 14, 2024 to February 15, 2025. In this example, we focus around the date this [legislation was originally proposed](https://www.canada.ca/en/department-finance/news/2024/11/more-money-in-your-pocket-a-tax-break-for-all-canadians.html) (November 21, 2024) to examine how this news impacted the search volume related to tax terms in Canada, specifically the search term 'GST tax'.

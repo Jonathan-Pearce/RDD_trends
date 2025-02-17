@@ -7,7 +7,7 @@ Enabling regression discontinuity experiments with [Google Trends](https://trend
 ## Example -  'GST tax' search in Canada
 Between November 2024 and February 2025 the federal government of Canada proposed, passed and executed legislation ([Bill C-78, the Tax Break for All Canadians Act](https://www.canada.ca/en/services/taxes/child-and-family-benefits/gst-hst-holiday-tax-break.html)) making essentially all food and many holiday essentials tax-free (GST/HST) for two months from December 14, 2024 to February 15, 2025. In this example, we focus around the date this [legislation was originally proposed](https://www.canada.ca/en/department-finance/news/2024/11/more-money-in-your-pocket-a-tax-break-for-all-canadians.html) (November 21, 2024) to examine how this news impacted the search volume related to tax terms in Canada, specifically the search term 'GST tax'.
 
-Code for replication:
+Code:
 ```R
 devtools::install_github("PMassicotte/gtrendsR")
 library(gtrendsR)
@@ -26,9 +26,8 @@ plot(rdd_graph)
 #save plot
 ggsave("gst_tax_example.png")
 ```
+Output:
 ![image](https://github.com/user-attachments/assets/97c3ef29-b027-414b-bb6d-4400eece03c8)
-
-
 
 ## Implementation Notes
 - Google trends reports search volume on a relative scale (interest over time) defined as follows; Numbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.

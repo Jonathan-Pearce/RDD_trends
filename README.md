@@ -34,6 +34,7 @@ Output:
 - Depending on the start and end points of your Google Trends query the time scale of data returned can vary (hour, day, week, etc.)
 - Some queries return values of "<1" for certain times, currently we impute a value of 0.5 for these times.
 
+
 ## References:
 ### Google Trends
 #### Papers
